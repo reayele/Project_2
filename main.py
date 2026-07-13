@@ -8,7 +8,11 @@ Date: 07/12/26
 
 from contact import Contact
 
+
 def main():
+
+    contacts = [] 
+
     while True:
         print("--- Contact Manger ---")
         print("1. Add Contact")
@@ -24,8 +28,15 @@ def main():
             print("\nGoodbye!")
             break
 
-        else:
-            print("\nFeature coming soon.")
+        if choice == "1":
+            name = input("Enter name: ")
+            phone = input("Enter phone number: ")
+            email = input("Enter email: ")
+            new_contact = Contact(name, phone, email)
+                
+            contacts.append(new_contact)
+            print("You have added a contact!")
+            print("Total contacts:", len(contacts))
             input("\nPress Enter to return to the menu...")
 
 if __name__ == "__main__":
