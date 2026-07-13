@@ -24,10 +24,6 @@ def main():
 
         choice = input("\nEnter your choice (1-6): ")
 
-        if choice == "6":
-            print("\nGoodbye!")
-            break
-
         if choice == "1":
             name = input("Enter name: ")
             phone = input("Enter phone number: ")
@@ -38,6 +34,20 @@ def main():
             print("You have added a contact!")
             print("Total contacts:", len(contacts))
             input("\nPress Enter to return to the menu...")
+        
+        elif choice == "2":
+            for contact in contacts:
+                print("Name:", contact.name)
+                print("Phone:", contact.phone)
+                print("Email:", contact.email)
+                input("\nPress Enter to return to the menu...")
+            
+            if len(contacts) == 0:
+                print("No contacts were found!")
+
+        elif choice == "6":
+            print("\nGoodbye!")
+            break
 
 if __name__ == "__main__":
     main()
