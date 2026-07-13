@@ -44,6 +44,32 @@ def main():
             
             if len(contacts) == 0:
                 print("No contacts were found!")
+        
+        elif choice == "3":
+            print("Hi, You are now asking to search up a contact")
+            print("Please enter a contact name below:")
+            name = input("Enter the contact name:")
+            Contactn = False
+
+            for contact in contacts:
+                if contact.name.lower() == name.lower():
+                    print("Name:", contact.name)
+                    print("Phone:", contact.phone)
+                    print("Email:", contact.email)
+                    Contactn = True
+            
+            if Contactn == False: 
+                print("The Contact is Not found. ")
+            input("\nPress Enter to return to the menu...")
+        
+
+        elif choice == "4":
+            for contact in contacts:
+                print("Name:", contact.name)
+                print("Phone:", contact.phone)
+                print("Email:", contact.email)
+                input("\nPress Enter to return to the menu...")
+
 
         elif choice == "6":
             print("\nGoodbye!")
