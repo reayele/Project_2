@@ -46,7 +46,7 @@ def main():
                 print("No contacts were found!")
         
         elif choice == "3":
-            print("Hi, You are now asking to search up a contact")
+            print("Hello, You are now asking to search up a contact")
             print("Please enter a contact name below:")
             name = input("Enter the contact name:")
             Contactn = False
@@ -61,14 +61,24 @@ def main():
             if Contactn == False: 
                 print("The Contact is Not found. ")
             input("\nPress Enter to return to the menu...")
-        
 
         elif choice == "4":
+            print("Hello, You are here to Update a Contact")
+            name = input("Please Enter the Contact you would like to Update: ")
+            contactna = False
+
             for contact in contacts:
-                print("Name:", contact.name)
-                print("Phone:", contact.phone)
-                print("Email:", contact.email)
-                input("\nPress Enter to return to the menu...")
+                if contact.name.lower() == name.lower():
+                    new_phone = input("Enter the new phone number: ")
+                    new_email = input("Enter the new email: ")
+                    contact.phone = new_phone
+                    new_email = contact.email
+                    print("You're Contact Has Now Been Updated!")
+                    contactna = True
+                    break 
+            if contactna == False: 
+                print("The Contact Was Not Found. ")
+            input("\nPress Enter to return to the menu...")
 
 
         elif choice == "6":
