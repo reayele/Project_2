@@ -40,10 +40,10 @@ def main():
                 print("Name:", contact.name)
                 print("Phone:", contact.phone)
                 print("Email:", contact.email)
-                input("\nPress Enter to return to the menu...")
             
             if len(contacts) == 0:
                 print("No contacts were found!")
+            input("\nPress Enter to return to the menu...")
         
         elif choice == "3":
             print("Hello, You are now asking to search up a contact")
@@ -72,7 +72,7 @@ def main():
                     new_phone = input("Enter the new phone number: ")
                     new_email = input("Enter the new email: ")
                     contact.phone = new_phone
-                    new_email = contact.email
+                    contact.email = new_email
                     print("You're Contact Has Now Been Updated!")
                     contactna = True
                     break 
@@ -80,6 +80,20 @@ def main():
                 print("The Contact Was Not Found. ")
             input("\nPress Enter to return to the menu...")
 
+        elif choice == "5":
+            print("Hello, You are here to Delete a Contact")
+            name = input("Please Enter the Contact you would like to Delete: ")
+            contactnam = False
+
+            for contact in contacts:
+                if contact.name.lower() == name.lower():
+                    contacts.remove(contact)
+                    print("You're Contact Has Now Been Deleted.")
+                    contactnam = True
+                    break 
+            if contactnam == False: 
+                print("The Contact Was Not Found. ")
+            input("\nPress Enter to return to the menu...")
 
         elif choice == "6":
             print("\nGoodbye!")
