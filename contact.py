@@ -15,3 +15,10 @@ class Contact:
     def contact_update(self, phone, email):
         self.phone = phone
         self.email = email
+
+    def to_dictionary(self):
+        return {
+            "name": self.name,
+            "phone": self.phone,
+            "email": self.email
+        }

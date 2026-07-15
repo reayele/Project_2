@@ -7,6 +7,7 @@ Date: 07/12/26
 """
 
 from contact import Contact
+from file_manager import save_contacts
 
 
 def main():
@@ -31,6 +32,7 @@ def main():
             new_contact = Contact(name, phone, email)
                 
             contacts.append(new_contact)
+            save_contacts(contacts)
             print("You have added a contact!")
             print("Total contacts:", len(contacts))
             input("\nPress Enter to return to the menu...")
@@ -73,6 +75,7 @@ def main():
                     new_email = input("Enter the new email: ")
                     contact.phone = new_phone
                     contact.email = new_email
+                    save_contacts(contacts)
                     print("You're Contact Has Now Been Updated!")
                     contactna = True
                     break 
@@ -88,6 +91,7 @@ def main():
             for contact in contacts:
                 if contact.name.lower() == name.lower():
                     contacts.remove(contact)
+                    save_contacts(contacts)
                     print("You're Contact Has Now Been Deleted.")
                     contactnam = True
                     break 
