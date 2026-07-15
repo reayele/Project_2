@@ -11,3 +11,7 @@ class Contact:
         self.name = name 
         self.phone = phone
         self.email = email
+
+    def contact_update(self, phone, email):
+        self.phone = phone
+        self.email = email
